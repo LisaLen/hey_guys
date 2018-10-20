@@ -12,10 +12,16 @@ stringArr = string.split(' ');
 var appendWord = () => {
 	let word = stringArr.shift(1);
 	console.log(word);
-	// $("#mainbox").append(word);
+	$("#mainbox").append(word);
 }
 
-setInterval(appendWord, 300);
+var startConvo = () => {
+	if (stringArr.length > 0) {
+		window.setInterval(appendWord, 300);	
+	} else {
+		window.clearInterval();
+	}
+}
 
 // console.log(appendWord(stringArr))
 
