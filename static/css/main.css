@@ -47,6 +47,12 @@ body {
 	border: 3px #845EC2 solid;
 }
 
+.heyguys-btn:hover {
+	color: #FFC75F;
+	background-color: #845EC2 ;
+	border: 3px #FFC75F solid;
+}
+
 .right {
 	padding-left: 0px!important;
 	padding-right: 0px!important;
