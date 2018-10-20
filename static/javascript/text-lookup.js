@@ -1,8 +1,12 @@
 //Take in text stream of some sort
 
 function isAggressive(input) {
-    return true;              // The function returns the product of p1 and p2
+    if(aggressiveObjects.contains(input))
+        return true;
+    return false;
 }
+
+
 
 const aggressiveObjects = {
     "guys": {replacement:"people, folks", score:1},
@@ -20,13 +24,13 @@ const exemplaryObjects = {
 };
 
 
-console.log("guys\n");
+console.log("guys");
 console.log(isAggressive('guys'));
-console.log("what she's trying to say\n");
+console.log("what she's trying to say");
 console.log(isAggressive('what she\'s trying to say'));
-console.log("do you understand\n");
+console.log("do you understand");
 console.log(isAggressive('do you understand'));
-console.log("neutral\n");
+console.log("neutral");
 console.log(isAggressive('neutral'));
-console.log("good\n");
+console.log("good");
 console.log(isAggressive('good'));
