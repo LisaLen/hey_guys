@@ -21,6 +21,7 @@ const exemplaryObjects = {
     //"": {replacement:"", score:-1},
     //"": {replacement:"", score:-1},
     //"": {replacement:"", score:-1}
+    //Adding to get changed file for commit.
 };
 
 
