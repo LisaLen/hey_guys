@@ -1,6 +1,6 @@
 /*
 font-family: 'Lobster', cursive;
-font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
 */
 
 body {
@@ -9,15 +9,15 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
-
-div {
-	
-}
 .header {
 	height: 7vh;
 	background-color: #845EC2;
 	color: #FFC75F;
 	padding-top: .5em;
+}
+
+.mainbody {
+	max-width: 1200px;
 }
 
 .logo,
@@ -45,6 +45,12 @@ div {
 	color: #845EC2;
 	background-color: #FFC75F;
 	border: 3px #845EC2 solid;
+}
+
+.heyguys-btn:hover {
+	color: #FFC75F;
+	background-color: #845EC2 ;
+	border: 3px #FFC75F solid;
 }
 
 .right {

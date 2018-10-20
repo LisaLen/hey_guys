@@ -11,7 +11,7 @@
   <meta name="keywords" content="">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lobster|Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
   <!-- CSS -->
@@ -22,6 +22,7 @@
  
 </head>
 <body>
+<header>
 <div class="container-fluid">
 
 <div class="row header">
@@ -32,15 +33,17 @@
 		</div>
 	</div>
 </div>
+</div>
+</header>
 
+<main>
+<div class="container-fluid mainbody">
 <div class="row">
 	<div class="col-12 col-md-6 left" >
 		<div class="card my-5 mx-3">
-		  <div class="card-body text-box" id="mainbox">
-		    <p>Text area.</p>
-		  </div> 
+		  <div class="card-body" id="mainbox">
+		  </div>
 		</div>
-
 		<div class="start-button text-center">
 			<button id="startbutton" type="button" class="btn heyguys-btn">
 				<h1>Start Conversation</h1>
@@ -69,7 +72,15 @@
 		</div>
 
 		<div class="row bottom">
-			<div class="col-12 d-flex justify-content-around align-items-center faces" >
+<!-- <<<<<<< HEAD
+			<div class="col-12 d-flex" >
+				<div class="card my-5 mx-3"">
+				  <div class="card-body" id="scorebox">
+				    <h1>score!</h1>
+				    <i class="far fa-smile"></i>
+				    <i class="far fa-frown-open"></i>
+======= -->
+			<div class="col-12 d-flex justify-content-around align-items-center faces" id="scorebox">
 
 				<div class="neutral">
 					<i class="far fa-meh-blank"></i>
@@ -86,6 +97,7 @@
 			  			<i class="far fa-frown-open"></i>
 			  		</div>
 
+>>>>>>> 09d196aa3145f435341e111d40162e207431145a
 				  </div>
 				</div> -->
 			</div>
@@ -96,16 +108,22 @@
 	</div>
 </div>
 </div>
+</div>
+</main>
 
+<footer>
+<div class="container-fluid">
 <div class="row footer">
 	<div class="col-12 d-flex">
 		<div class="hashtags">
-			<h6> #end_heyguys #builtbygirls #womenhack2018 </h6>
+			<h6> #end_heyguys #builtbygirls #womenhack2018 #girldevelopit #iwill #microaggressions #iwillchange #inclusionintheworkplace #womenintech #employeeretention #opensource #hackathon</h6>
 		</div>
-		
 	</div>
 </div>
-	<script type="text/javascript" src='https://code.jquery.com/jquery.js'></script>
-	<script type="text/javascript" src ='../static/js/script.js'></script>
+</div>
+</footer>
+
+<script type="text/javascript" src='https://code.jquery.com/jquery.js'></script>
+<script type="text/javascript" src ='../static/js/script.js'></script>
 
 </body>

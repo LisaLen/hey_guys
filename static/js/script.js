@@ -43,19 +43,17 @@ const exemplaryObjects = {
 $( document ).ready(function() {
     console.log( "ready!" );
 
+
+
     var appendWord = () => {
-		let word = stringArr.shift(1);
-		console.log(word);
-		$("#mainbox").append(word + " ");
-	}	
+    	if (stringArr.length > 0) {
+    		let word = stringArr.shift(1);
+			$("#mainbox").append(word + " ");
+    	}
+	}
 
 	var startConvo = () => {
-		console.log('convo started');
-		if (stringArr.length > 0) {
-			window.setInterval(appendWord, 300);	
-		} else {
-			window.clearInterval();
-		}
+		var appendLoop = window.setInterval(appendWord, 300);	
 	}
 
 	$("#startbutton").click(startConvo);
