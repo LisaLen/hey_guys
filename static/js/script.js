@@ -46,22 +46,16 @@ $( document ).ready(function() {
 
 
     var appendWord = () => {
-		let word = stringArr.shift(1);
-		$("#mainbox").append(word + " ");
-	}
-
-	var clearLoop = () => {
-		if (stringArr.length === 0) {
-			window.clearInterval(appendLoop);
-		}
+    	if (stringArr.length > 0) {
+    		let word = stringArr.shift(1);
+			$("#mainbox").append(word + " ");
+    	} else {
+    		window.clearInterval(appendLoop);
+    	}
 	}
 
 	var startConvo = () => {
-		var appendLoop = window.setInterval(
-			() => {
-				appendWord(); 
-				clearLoop();
-			}), 300);	
+		var appendLoop = window.setInterval(appendWord, 300);	
 	}
 
 	$("#startbutton").click(startConvo);
