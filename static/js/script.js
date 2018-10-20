@@ -9,19 +9,60 @@ var string = `Hey guys, did you see the P1 Defect?
 
 stringArr = string.split(' ');
 
-var appendWord = () => {
-	let word = stringArr.shift(1);
-	console.log(word);
-	$("#mainbox").append(word);
+////APRIL'S LOOKUP OBJ
+//Take in text stream of some sort
+
+function isAggressive(input) {
+    if(aggressiveObjects[input]) {
+        return aggressiveObjects[input];
+    }
+    return false;
 }
 
-var startConvo = () => {
-	if (stringArr.length > 0) {
-		window.setInterval(appendWord, 300);	
-	} else {
-		window.clearInterval();
+const aggressiveObjects = {
+    "guys": {replacement:"people, folks", score:1},
+    "what she's trying to say": {replacement:"what I hear her saying", score:1},
+    "do you understand": {replacement:"(just don't say that)", score:1},
+    //"": {replacement:"", score:1},
+    //"": {replacement:"", score:1},
+    //"": {replacement:"", score:1}
+};
+
+const exemplaryObjects = {
+    //"": {replacement:"", score:-1},
+    //"": {replacement:"", score:-1},
+    //"": {replacement:"", score:-1}
+    //Adding to get changed file for commit.
+};
+
+// console.log(isAggressive('guys'))
+
+////JQUERY
+
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+    var appendWord = () => {
+		let word = stringArr.shift(1);
+		console.log(word);
+		$("#mainbox").append(word + " ");
+	}	
+
+	var startConvo = () => {
+		console.log('convo started');
+		if (stringArr.length > 0) {
+			window.setInterval(appendWord, 300);	
+		} else {
+			window.clearInterval();
+		}
 	}
-}
+
+	$("#startbutton").click(startConvo);
+});
+
+
+
 
 // console.log(appendWord(stringArr))
 
