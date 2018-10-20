@@ -46,10 +46,11 @@ $( document ).ready(function() {
     var appendWord = () => {
 		let word = stringArr.shift(1);
 		console.log(word);
-		$("#mainbox").append(word);
+		$("#mainbox").append(word + " ");
 	}	
 
 	var startConvo = () => {
+		console.log('convo started');
 		if (stringArr.length > 0) {
 			window.setInterval(appendWord, 300);	
 		} else {
@@ -57,7 +58,7 @@ $( document ).ready(function() {
 		}
 	}
 
-	$("#start").click(startConvo);
+	$("#startbutton").click(startConvo);
 });
 
 
