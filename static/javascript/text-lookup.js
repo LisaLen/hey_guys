@@ -11,8 +11,19 @@ function addWord(input){
         lastFiveWords.shift();
 }
 //Check for keyword in last five words
-
 //Return: trigger word, suggestion, and score - as an object
+function checkLastFiveWords(input){
+    for(var key in aggressiveObjects)
+    {
+        if(lastFiveWords.indexOf(aggressiveObjects) != -1)
+            return {key, aggressiveObjects[key].response, aggressiveObjects[key].score}
+    }
+    for(var key in exemplaryObjects)
+    {
+        if(lastFiveWords.indexOf(exemplaryObjects) != -1)
+            return {key, exemplaryObjects[key].response, exemplaryObjects[key].score}
+    }
+}
 
 
 //True or false for whether or not it's aggressive
@@ -48,7 +59,7 @@ function checkExemplary(input) {
 }
 
 const aggressiveObjects = {
-    "guys": {response:"people, folks", score:1},
+    "guys": {response:"people, folks", score:-1},
     "what she's trying to say": {response:"what I hear her saying", score:-1},
     "do you understand": {response:"(just don't say that)", score:-1},
     "take this offline": {response:"(Are you excluding people?)", score:-1}
