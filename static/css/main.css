@@ -9,15 +9,15 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
-
-div {
-	
-}
 .header {
 	height: 7vh;
 	background-color: #845EC2;
 	color: #FFC75F;
 	padding-top: .5em;
+}
+
+.mainbody {
+	max-width: 1200px;
 }
 
 .logo,
