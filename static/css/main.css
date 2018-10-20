@@ -1,3 +1,13 @@
-body{
-    
+
+
+div {
+	border: 1px pink solid;
+}
+
+.row {
+	height: 100vh;
+}
+
+.card {
+
 }
