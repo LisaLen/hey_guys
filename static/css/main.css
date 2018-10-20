@@ -34,7 +34,7 @@ div {
 
 .left,
 .right {
-	height: 90vh;
+	height: 88vh;
 }
 
 .text-box {
@@ -53,32 +53,48 @@ div {
 }
 
 i {
-	font-size: 12em;
+	font-size: 18em;
+
+}
+
+.neutral {
+	color: white;
 }
 
 .smiley {
-	color: green;
+	color: #C4FCEF;
 }
 
 .frownie {
-	color: red
+	color: #C34A36;
 }
 
 
 .top,
 .bottom {
-	height: 45vh;
+	height: 44vh;
+}
+
+.faces {
+	padding-bottom: 1em;
 }
 
 .card {
 	width: 100%;
 	background-color: #FBEAFF;
-	border: 3px #845EC2 solid;
+	color: #845EC2;
+	padding: .25em; 
 }
 
 
 .footer {
-	height: 3vh;
+	height: 5vh;
 	background-color: #845EC2;
+}
+
+.hashtags {
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 3px;
 }
 

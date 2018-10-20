@@ -19,4 +19,4 @@ if __name__ == '__main__':
     app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
     DebugToolbarExtension(app)
     #connect_to_db(app)
-    app.run(port=5000, host="0.0.0.0")
+    app.run(port=5003, host="0.0.0.0")
