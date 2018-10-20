@@ -49,8 +49,6 @@ $( document ).ready(function() {
     	if (stringArr.length > 0) {
     		let word = stringArr.shift(1);
 			$("#mainbox").append(word + " ");
-    	} else {
-    		window.clearInterval(appendLoop);
     	}
 	}
 
