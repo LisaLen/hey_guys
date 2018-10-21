@@ -17,7 +17,11 @@ body {
 }
 
 .mainbody {
-	max-width: 1200px;
+	max-width: 1240px;
+}
+
+#mainbox {
+	font-size: 1.25em;
 }
 
 .logo {
