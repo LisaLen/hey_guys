@@ -3,25 +3,26 @@
 //is contained somewhere in there.
 //TODO: Make this not break when multiple keywords are within the last five words
 //Keep array of last five words
-let lastFiveWords = [];
+var lastFiveWords = [];
 //Take in next word, add to lastFiveWords, and delete as needed
 function addWord(input){
-    lastFiveWords.push(input);
+    lastFiveWords.push(input.toLowerCase().replace(/(^,)|(,$)/g, ""));
     if(lastFiveWords.size > 5)
         lastFiveWords.shift();
+    return checkLastFiveWords();
 }
 //Check for keyword in last five words
 //Return: trigger word, suggestion, and score - as an object
-function checkLastFiveWords(input){
+function checkLastFiveWords(){
     for(var key in aggressiveObjects)
     {
-        if(lastFiveWords.indexOf(aggressiveObjects) != -1)
-            return {key, aggressiveObjects[key].response, aggressiveObjects[key].score}
+        if(lastFiveWords.indexOf(key) != -1)
+            return {key:key, response: aggressiveObjects[key].response, score: aggressiveObjects[key].score}
     }
     for(var key in exemplaryObjects)
     {
         if(lastFiveWords.indexOf(exemplaryObjects) != -1)
-            return {key, exemplaryObjects[key].response, exemplaryObjects[key].score}
+            return {key:key, response: exemplaryObjects[key].response, score: exemplaryObjects[key].score}
     }
 }
 
@@ -58,8 +59,10 @@ function checkExemplary(input) {
     return null;
 }
 
+//Assume everything is lowercase
 const aggressiveObjects = {
     "guys": {response:"people, folks", score:-1},
+    "dudes": {response:"people, folks", score:-1},
     "what she's trying to say": {response:"what I hear her saying", score:-1},
     "do you understand": {response:"(just don't say that)", score:-1},
     "take this offline": {response:"(Are you excluding people?)", score:-1}
@@ -105,3 +108,13 @@ console.log("exemplary - thank you");
 console.log(checkExemplary('thank you'));
 console.log("exemplary - please continue your thought");
 console.log(checkExemplary('please continue your thought'));
+console.log("------------------------");
+console.log("Now for checkLastFiveWords");
+console.log("Hey guys, did you see");
+console.log(addWord("Hey"));
+//console.log(addWord("guys,"));
+console.log(addWord("did"));
+console.log(addWord("you"));
+console.log(addWord("see"));
+console.log(addWord("thank"));
+console.log(addWord("you"));
