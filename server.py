@@ -15,7 +15,7 @@ def main_page():
 
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
     DebugToolbarExtension(app)
     #connect_to_db(app)

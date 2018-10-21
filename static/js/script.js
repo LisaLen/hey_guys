@@ -43,6 +43,9 @@ const aggressiveObjects = {
 ////JQUERY
 $( document ).ready(function() {
     var lastFiveWords = [];
+    var green = 128;
+    var red = 100;
+
 
     function addWord(input){
         lastFiveWords.push(input.toLowerCase().replace(/(^,)|(,$)/g, ""));
@@ -61,6 +64,14 @@ $( document ).ready(function() {
                     console.log('TRIGGERED',aggressiveObjects[key]);
                     $("#triggerbox").append(`<p> ${key} </p>`);
                     $("#suggestedbox").append(`<p> ${aggressiveObjects[key].response} </p>`);
+                    if (aggressiveObjects[key].score === 1) {
+                        $("#scorebox").attr('class', 'far fa-smile smiley');
+                        $("#scorebox").css("color", `rgb(0,${green + 50},0)`);
+                    } else {
+                        $("#scorebox").attr('class', 'far fa-frown-open');
+                        $("#scorebox").css("color", `rgb(${red + 20},0,0)`);
+                    }
+
                     lastFiveWords = [];
                     return {key:key, response: aggressiveObjects[key].response, score: aggressiveObjects[key].score}
                 }
