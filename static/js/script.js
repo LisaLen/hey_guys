@@ -1,4 +1,4 @@
-var string = `Hey guys, did you see the P1 Defect? 
+var string = `Hey dudes, did you see the P1 Defect? 
 \n We need to have a fix in the next hour. 
 \n Rebecca, you realized the error. What is the root cause?
 \n When the user clicks OK, they are not brought to the next page, as expected
