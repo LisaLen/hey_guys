@@ -7,7 +7,7 @@ var lastFiveWords = [];
 //Take in next word, add to lastFiveWords, and delete as needed
 function addWord(input){
     lastFiveWords.push(input.toLowerCase().replace(/(^,)|(,$)/g, ""));
-    if(lastFiveWords.size > 5)
+    if(lastFiveWords.length > 5)
         lastFiveWords.shift();
     return checkLastFiveWords();
 }
@@ -25,6 +25,7 @@ function checkLastFiveWords(){
         if(fiveWordsString.indexOf(key) != -1)
             return {key:key, response: exemplaryObjects[key].response, score: exemplaryObjects[key].score}
     }
+    return null;
 }
 
 
@@ -113,9 +114,15 @@ console.log("------------------------");
 console.log("Now for checkLastFiveWords");
 console.log("Hey guys, did you see");
 console.log(addWord("Hey"));
-//console.log(addWord("guys,"));
+console.log(addWord("guys,"));
 console.log(addWord("did"));
 console.log(addWord("you"));
 console.log(addWord("see"));
 console.log(addWord("thank"));
 console.log(addWord("you"));
+console.log(addWord("you"));
+console.log(addWord("you"));
+console.log(addWord("you"));
+console.log(addWord("you"));
+
+
