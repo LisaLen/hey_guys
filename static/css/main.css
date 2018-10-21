@@ -1,6 +1,9 @@
 /*
 font-family: 'Lobster', cursive;
 font-family: 'Lato', sans-serif;
+
+color deck:
+https://mycolor.space/?hex=%23845EC2&sub=1
 */
 
 body {
@@ -64,6 +67,17 @@ body {
 .right {
 	padding-left: 0px!important;
 	padding-right: 0px!important;
+}
+
+.subtitle {
+	font-family: 'Lobster', cursive;
+	color: #FFC75F;
+}
+
+#triggerbox,
+#suggestedbox {
+	height: 33vh;
+	overflow: auto;
 }
 
 i {
