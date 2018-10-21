@@ -1,11 +1,11 @@
-var string = `Hey guys, did you see the P1 Defect? 
+var string = `Hey dudes, did you see the P1 Defect? 
 \n We need to have a fix in the next hour. 
 \n Rebecca, you realized the error. What is the root cause?
-\n When the user click OK, they are not brought to the next page, as expected
+\n When the user clicks OK, they are not brought to the next page, as expected
 \n What she's trying to say is there’s an error in HER code starting at line 45. I have the fix ready to send.
 \n I think the root cause is actually a conflict starting at Line 50 that redirects after line 45 fires.
 \n Guys, these are potential root causes.  Rebecca, please finish your thought.
-\n I am in agreement with Lena, the root cause is the conflict on line 50. Here, I’m sharing my screen and we can trace it. A good fix could be ….”`
+\n I am in agreement with Lena, the root cause is the conflict on line 50. Here, I’m sharing my screen and we can trace it. A good fix could be ….`
 
 stringArr = string.split(' ');
 
@@ -38,13 +38,7 @@ const exemplaryObjects = {
 // console.log(isAggressive('guys'))
 
 ////JQUERY
-
-
 $( document ).ready(function() {
-    console.log( "ready!" );
-
-
-
     var appendWord = () => {
     	if (stringArr.length > 0) {
     		let word = stringArr.shift(1);
@@ -58,8 +52,6 @@ $( document ).ready(function() {
 
 	$("#startbutton").click(startConvo);
 });
-
-
 
 
 // console.log(appendWord(stringArr))
