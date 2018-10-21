@@ -69,6 +69,17 @@ body {
 	padding-right: 0px!important;
 }
 
+.subtitle {
+	font-family: 'Lobster', cursive;
+	color: #FFC75F;
+}
+
+#triggerbox,
+#suggestedbox {
+	height: 33vh;
+	overflow: auto;
+}
+
 i {
 	font-size: 18em;
 
