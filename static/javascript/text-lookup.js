@@ -14,14 +14,15 @@ function addWord(input){
 //Check for keyword in last five words
 //Return: trigger word, suggestion, and score - as an object
 function checkLastFiveWords(){
+    var fiveWordsString = lastFiveWords.join(' ');
     for(var key in aggressiveObjects)
     {
-        if(lastFiveWords.indexOf(key) != -1)
+        if(fiveWordsString.indexOf(key) != -1)
             return {key:key, response: aggressiveObjects[key].response, score: aggressiveObjects[key].score}
     }
     for(var key in exemplaryObjects)
     {
-        if(lastFiveWords.indexOf(exemplaryObjects) != -1)
+        if(fiveWordsString.indexOf(key) != -1)
             return {key:key, response: exemplaryObjects[key].response, score: exemplaryObjects[key].score}
     }
 }
