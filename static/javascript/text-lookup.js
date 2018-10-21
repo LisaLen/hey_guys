@@ -1,4 +1,30 @@
 //Take in text stream of some sort
+//This is _super_ inefficient, but general idea is to take in stream, check last five words, and return if a keyword
+//is contained somewhere in there.
+//TODO: Make this not break when multiple keywords are within the last five words
+//Keep array of last five words
+let lastFiveWords = [];
+//Take in next word, add to lastFiveWords, and delete as needed
+function addWord(input){
+    lastFiveWords.push(input);
+    if(lastFiveWords.size > 5)
+        lastFiveWords.shift();
+}
+//Check for keyword in last five words
+//Return: trigger word, suggestion, and score - as an object
+function checkLastFiveWords(input){
+    for(var key in aggressiveObjects)
+    {
+        if(lastFiveWords.indexOf(aggressiveObjects) != -1)
+            return {key, aggressiveObjects[key].response, aggressiveObjects[key].score}
+    }
+    for(var key in exemplaryObjects)
+    {
+        if(lastFiveWords.indexOf(exemplaryObjects) != -1)
+            return {key, exemplaryObjects[key].response, exemplaryObjects[key].score}
+    }
+}
+
 
 //True or false for whether or not it's aggressive
 function isAggressive(input) {
@@ -33,18 +59,18 @@ function checkExemplary(input) {
 }
 
 const aggressiveObjects = {
-    "guys": {response:"people, folks", score:1},
-    "what she's trying to say": {response:"what I hear her saying", score:1},
-    "do you understand": {response:"(just don't say that)", score:1},
-    "take this offline": {response:"(Are you excluding people?)", score:1}
+    "guys": {response:"people, folks", score:-1},
+    "what she's trying to say": {response:"what I hear her saying", score:-1},
+    "do you understand": {response:"(just don't say that)", score:-1},
+    "take this offline": {response:"(Are you excluding people?)", score:-1}
     //"": {response:"", score:1},
     //"": {response:"", score:1},
     //"": {response:"", score:1}
 };
 
 const exemplaryObjects = {
-    "thank you": {response:"Shows appreciation", score:-1},
-    "please continue your thought": {response:"Counters interruptions", score:-1},
+    "thank you": {response:"Shows appreciation", score:1},
+    "please continue your thought": {response:"Counters interruptions", score:1},
     //"": {response:"", score:-1}
 };
 
